@@ -1,3 +1,7 @@
+* {
+  font-size: 30px; /* Change the font size to your desired value */
+}
+
 .profile-pic img {
   max-width: 100%;
 }
@@ -10,36 +14,22 @@
   max-width: 100%;
   padding: 20px;
   max-height: 100%;
-  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  justify-content: space-evenly; /* Horizontally centered and equal spacing */
+  align-content: space-evenly; /* Vertically centered and equal spacing */
 }
 
-/* Tablet styling  */
-@media screen and (min-width: 768px) {
-  .image-grid {
-    grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
-    max-width: 80%;
-    margin: 0 auto;
-  }
-}
-
-/* Desktop styling  */
-@media screen and (min-width: 1024px) {
-  .image-grid {
-    grid-template-columns: repeat(3, 1fr); /* Three columns on desktops */
-    max-width: 100%;
-    margin: 0 auto;
-  }
-}
+/* Tablet styling (768px - 1023px) */
 
 .main {
   height: 100vh;
-  border: 1px solid orange;
+  /* border: 1px solid orange; */
 }
 
 .root-container {
   margin: auto;
   display: flex;
   flex-direction: column;
+  background-color: #fbe5e0;
 }
 
 .profile-pic {
@@ -48,19 +38,35 @@
 }
 
 .about-me {
-  border: 1px solid orange;
+  /* border: 1px solid orange; */
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.about-me p {
+  padding: 20px;
 }
 
 .my-work {
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  font-family: "Montserrat", sans-serif;
+}
+
+.my-work h1 {
+  text-align: center;
 }
 
 .grid-item {
+  background-color: #f6ebe0;
   display: grid;
   text-align: center;
   padding: 10px;
   grid-template-rows: 2fr 1fr;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
   /* width: 310px; */
 }
 
@@ -79,8 +85,59 @@
 }
 
 .contact-me {
-  background-color: yellowgreen;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  padding: 20px;
+  background-color: #fbe5e0;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.action-shot {
+.contact-me-text {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.action-shot img {
+  width: 100%;
+}
+
+.action-shot-tablet {
+  display: none;
+}
+
+.action-shot-tablet img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; /* Center the image within the container */
+}
+
+@media screen and (min-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  .action-shot {
+    display: none;
+    padding: 100px;
+  }
+
+  .action-shot-tablet {
+    display: block;
+  }
+}
+
+/* Desktop styling (1024px and above) */
+@media screen and (min-width: 1024px) {
+  .image-grid {
+    grid-template-columns: repeat(3, 1fr); /* Three columns on desktops */
+    max-width: 100%;
+    margin: 0 auto;
+  }
 }
