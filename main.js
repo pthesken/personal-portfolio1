@@ -23,6 +23,7 @@ function createProjectView(
   PROJECT_TEXT_CONTAINER.classList.add("project-text");
 
   PROJECT_LINK.href = projectLink;
+  PROJECT_LINK.target = "blank";
   PROJECT_IMAGE.src = projectImage;
   PROJECT_HEADER.textContent = projectTitle;
   PROJECT_TEXT.textContent = projectDescription;
@@ -34,8 +35,7 @@ function createProjectView(
   IMAGE_GRID.append(GRID_ITEM);
 }
 
-for (let i = 0; i < projects.length; i++) {
-  const project = projects[i];
+for (let project of projects) {
   createProjectView(
     project.link,
     project.image,
