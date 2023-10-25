@@ -67,7 +67,19 @@
   grid-template-rows: 2fr 1fr;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  transition: transform 0.3s;
   /* width: 310px; */
+}
+
+.grid-item a {
+  text-decoration: none; /* Remove the underline */
+  color: #0078d4; /* Change the link color to your desired color */
+}
+
+.grid-item:hover {
+  color: #004375; /* Change link color on hover */
+
+  transform: scale(1.05);
 }
 
 .project-image {
